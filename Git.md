@@ -1,6 +1,8 @@
 # Git
 
-## 命令
+命令规则
+
+![image-20251103134211124](./assets/image-20251103134211124.png)
 
 git init //初始化仓库 
 
@@ -20,11 +22,24 @@ git branch -M main  //指定分支
 
 git remote set-url origin <读用的URL>  //更改设置远程仓库url
 
-新
+### git log 
 
-新 新
+#### git log [选项] [范围]
 
-新 新 新
+git log //默认打印所在分支的日志
 
+git log main //打印main分支的log
 
+git log --oneline  //美国提交一行显示
 
+git log -n  //只显示前n行数据
+
+### git revert
+
+git revert head     //撤销最近一次提交，文件会自动修改为上一次提交的状态。
+
+git revert <commit_hash>   //撤销某次特定提交，立即提交。
+
+git revert -n <commit_hash>  //撤销这次提交的改动，但不要马上提交，我想先看一看再手动提交。
+
+### git reset
