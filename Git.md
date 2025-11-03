@@ -43,3 +43,21 @@ git revert <commit_hash>   //撤销某次特定提交，立即提交。
 git revert -n <commit_hash>  //撤销这次提交的改动，但不要马上提交，我想先看一看再手动提交。
 
 ### git reset
+
+#### 基本语法
+
+```
+git reset [--soft|--mixed|--hard] <目标>
+目标处填写以下内容：
+提交哈希（commit ID）
+分支名
+标签名（tag）
+HEAD 的相对位置（如 HEAD~1, HEAD^, HEAD~3）
+甚至某个远程分支（如 origin/main）
+```
+
+git reset --soft HEAD~1  //抵消commit命令，执行了git add的文件依旧在暂存区，文件也是修改后的状态。
+
+git reset --mixed HEAD~1  //抵消commit和add命令 但是文件仍然在修改后的状态。
+
+git reset --hard HEAD~1   //抵消commit和add命令 文件在修改前的状态（即上一次commit之后的状态）。
