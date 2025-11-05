@@ -30,7 +30,7 @@ IO流
 
 体系
 
-![82119ce04a260c5922aebc953a5b94a7](./assets/82119ce04a260c5922aebc953a5b94a7.png)
+![82119ce04a260c5922aebc953a5b94a7](./media/82119ce04a260c5922aebc953a5b94a7.png)
 
 为什么使用字节流时使用数组传递和接受数据，而不用列表？
 
@@ -96,13 +96,13 @@ flush：刷新字符流 close 关闭包含了刷新
 
 InputStreamReader
 
-![bc6241314c6c4162023e816033dad4ff](./assets/bc6241314c6c4162023e816033dad4ff.png)
+![bc6241314c6c4162023e816033dad4ff](./media/bc6241314c6c4162023e816033dad4ff.png)
 
 打印流
 
 PrintStream PrintWriter
 
-![1600c63fda9e3b2362ce41fb3a41fe97](./assets/1600c63fda9e3b2362ce41fb3a41fe97.png)
+![1600c63fda9e3b2362ce41fb3a41fe97](./media/1600c63fda9e3b2362ce41fb3a41fe97.png)
 
 特殊数据流
 
@@ -118,7 +118,7 @@ Tips:
 
 使用try-catch-finally方法时 遇到需要释放资源的情况 比如通信管道的释放，字节流管道的释放，可以使用try-with-resource方法。
 
-![cab35877b6cf377d342cfd5799cfde94](./assets/cab35877b6cf377d342cfd5799cfde94.png)
+![cab35877b6cf377d342cfd5799cfde94](./media/cab35877b6cf377d342cfd5799cfde94.png)
 
 
 
@@ -136,13 +136,13 @@ Tips:
 
 readLine():读取一行数据
 
-![b516e2c29d398d73fba44351d59ddcd0](./assets/b516e2c29d398d73fba44351d59ddcd0.png)
+![b516e2c29d398d73fba44351d59ddcd0](./media/b516e2c29d398d73fba44351d59ddcd0.png)
 
 缓冲字符输出流
 
 newLine():换行输出
 
-![bc59d831d0c9a104f49b851a101987ce](./assets/bc59d831d0c9a104f49b851a101987ce.png)
+![bc59d831d0c9a104f49b851a101987ce](./media/bc59d831d0c9a104f49b851a101987ce.png)
 
 IO框架
 
@@ -159,7 +159,7 @@ common-io框架
 
 ```
 
-![e5a7dbd6658c8c568d1798605e0dd59c](./assets/e5a7dbd6658c8c568d1798605e0dd59c.png)
+![e5a7dbd6658c8c568d1798605e0dd59c](./media/e5a7dbd6658c8c568d1798605e0dd59c.png)
 
 junit单元测试
 
@@ -169,25 +169,25 @@ junit单元测试
 
 反射第一步：获取class对象
 
-![image-20251104173141371](./assets/image-20251104173141371.png)
+![image-20251104173141371](./media/image-20251104173141371.png)
 
 
 
 获取构造器
 
-![image-20251104174751494](./assets/image-20251104174751494.png)
+![image-20251104174751494](./media/image-20251104174751494.png)
 
 
 
 获取成员变量
 
-![image-20251104174848174](./assets/image-20251104174848174.png)
+![image-20251104174848174](./media/image-20251104174848174.png)
 
 
 
 成员方法
 
-![image-20251104174905042](./assets/image-20251104174905042.png)
+![image-20251104174905042](./media/image-20251104174905042.png)
 
 
 
