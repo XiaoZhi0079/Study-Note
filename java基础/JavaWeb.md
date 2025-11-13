@@ -13,6 +13,75 @@ Wolf w2=(Wolf)a1;
 w2.eatmeat();
 ```
 
+## 异常
+
+![image-20251113153906025](./../计算机网络/media/image-20251113153906025.png)
+
+Error属于严重的错误。
+
+Checked Exception类异常属于检查型异常，写程序时需要使用throws在方法的声明之后显示捕获，或者使用try-catch包围。
+
+```
+//throws的案例
+
+public class Demo1 {
+    public static void main(String[] args) throws ClassNotFoundException {
+        Class clz = Class.forName("com.itwanger.s41.Demo1");
+    }
+}
+```
+
+```
+public class Demo2 {
+    private String mHost;
+    private int mPort;
+    private Socket mSocket;
+    private final Object mLock = new Object();
+
+    public void run() {
+    }
+
+    private void initSocket() {
+        while (true) {
+            try {
+                Socket socket = new Socket(mHost, mPort);
+                synchronized (mLock) {
+                    mSocket = socket;
+                }
+                break;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+```
+
+Unchecked Exception类异常属于运行时异常，可以通过编码进行规避，使用throw捕获。
+
+```
+public class ThrowDemo {
+    static void checkEligibilty(int stuage){
+        if(stuage<18) {
+            throw new ArithmeticException("年纪未满 18 岁，禁止观影");
+        } else {
+            System.out.println("请认真观影!!");
+        }
+    }
+
+    public static void main(String args[]){
+        checkEligibilty(10);
+        System.out.println("愉快地周末..");
+    }
+}
+```
+
+**try-catch-finally**
+
+**try-catch-resources**
+
+https://javabetter.cn/exception/try-with-resources.html
+
 ## 函数式编程
 
 ### 匿名内部类
@@ -1317,18 +1386,104 @@ public class MyImportSelector implements ImportSelector {
 
 ![image-20251111171753861](./../计算机网络/media/image-20251111171753861.png)
 
-#### Swagger
+# java高级
 
-介绍
+## spring-doc
 
-![image-20251111174802083](./../计算机网络/media/image-20251111174802083.png)
+### 教程查阅
 
-使用方式
+https://www.showapi.com/news/article/67424e564ddd79f11a0c2355
 
-![image-20251111175011013](./../计算机网络/media/image-20251111175011013.png)
+### 概述
 
-![image-20251111175025147](./../计算机网络/media/image-20251111175025147.png)
+Spring Doc 是一个强大的工具，旨在为Spring REST API生成OpenAPI 3.0文档。
 
-常用注解
+### 使用方法
 
-![image-20251111181527794](./../计算机网络/media/image-20251111181527794.png)
+引入依赖
+
+```
+    <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>${spring-doc}</version>
+    </dependency>
+```
+
+写配置信息
+
+```
+springdoc:
+  api-docs:
+    path: /v3/api-docs       //api文档访问路径
+  swagger-ui:
+    path: /swagger-ui.html   //ui访问路径
+  group-configs:
+    - group: 第一组
+      packages-to-scan:
+        - com.example.controller     //所扫描的包
+    - group: 第二组
+      packages-to-scan:
+        - com.example.control
+```
+
+控制类注解及方法注解（可选）
+
+使用@Tag注解标注
+
+```
+@RestController
+@RequestMapping("/clazzs")
+@Tag(name = "班级管理", description = "班级增删改查")
+public class ClazzController {
+
+    @Operation(summary = "查询", description = "通过ID查询")
+    @GetMapping("/{id}")
+    public Result findById(@PathVariable Integer id) {
+        return Result.success(clazzService.findById(id));
+    }
+```
+
+参数注解（可选）
+
+使用@Opeartion注解标注
+
+```
+@GetMapping("/users/{id}")
+@Operation(summary = "Get user by ID", description = "Returns a user by the specified ID")
+public User getUserById(@Parameter(description = "The ID of the user to retrieve", required = true) @PathVariable Long id) {
+// 方法实现
+}
+```
+
+描述实体类（可选）
+
+使用@Schema注解标注
+
+```
+@NoArgsConstructor
+@Data
+@Schema(name = "班级",description = "班级的POJO类")
+public class Clazz {
+
+@Schema(description = "班级ID", example = "1")
+private Integer id;
+
+@Schema(description = "班级名称", example = "Java班")
+private String name;
+
+@Schema(description = "班主任ID", example = "1")
+private Integer masterId;
+
+@Schema(description = "班主任名字", example = "里美尤利娅")
+private String masterName;
+
+}
+```
+
+添加文档信息（可选）
+
+```
+
+```
+
