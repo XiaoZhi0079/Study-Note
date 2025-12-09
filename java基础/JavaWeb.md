@@ -1234,9 +1234,40 @@ ERROR
 
 FATAL
 
+#### 过滤器
 
+##### 概述
 
-#### 拦截器路径配置
+**Filter 是 Servlet 规范层面的组件**，不是 Spring 提供的，而是 **Tomcat / Jetty / Undertow 等 Web 容器提供的标准功能**。
+
+- 运行在 **Servlet 容器层**
+- 针对 **所有请求**（包括静态资源、Controller、甚至 JSP 等）都能过滤
+- 能在请求进入 Servlet 前做事，也能在响应返回浏览器前做事
+
+##### 常见用途
+
+统一编码处理（UTF-8）
+
+跨域 CORS
+
+XSS 防护
+
+权限校验（适合无 session 的早期验证）
+
+日志/性能统计
+
+全局请求包装（RequestWrapper）
+
+#### 拦截器
+
+##### 概述
+
+**Interceptor 是 Spring MVC 提供的组件**。
+
+- 只拦截 **进入 Spring MVC 的请求**
+- 不会处理静态资源（除非你手动配置）
+- 拦截的是 **Controller 调用前后**
+- 运行在 Spring 容器内部，能拿到许多 Spring 的 bean
 
 ![image-20250728151317460](./media/image-20250728151317460.png)
 
@@ -1386,7 +1417,7 @@ public class MyImportSelector implements ImportSelector {
 
 ![image-20251111171753861](./../计算机网络/media/image-20251111171753861.png)
 
-# java高级
+# 框架
 
 ## spring-doc
 
