@@ -42,7 +42,7 @@ git log //默认打印所在分支的日志
 
 git log main //打印main分支的log
 
-git log --oneline  //美国提交一行显示
+git log --oneline  //提交一行显示
 
 git log -n  //只显示前n行数据
 
