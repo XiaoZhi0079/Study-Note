@@ -128,7 +128,7 @@ get：获取单个值
 
 hmget：获取多个值
 
-hmgetall：获取所有值
+hgetall：获取所有值
 
 ##### 删
 
@@ -292,4 +292,52 @@ zrem myset a b:删除集合中元素a，b
 .....
 
 按排名删除
+
+## 通用命令
+
+type key：查询该key的数据类型
+
+```
+redis> SET weather "sunny"
+OK
+
+redis> TYPE weather
+string
+```
+
+pexpireat：设置过期时间戳（不能随便写）
+
+```
+127.0.0.1:6379> set name satomi
+OK
+127.0.0.1:6379> pexpireat name 1735640000123
+(integer) 1
+127.0.0.1:6379>
+```
+
+rename oldname newname：更名
+
+```
+127.0.0.1:6379> set name satomi
+OK
+127.0.0.1:6379> rename name username
+OK
+127.0.0.1:6379> get username
+"satomi"
+127.0.0.1:6379>
+```
+
+del：删除key
+
+exeit：判断是否存在
+
+```
+127.0.0.1:6379> EXISTS KEY_NAME
+```
+
+key：查找符合模式的key，其中的pattern是通配符。
+
+```
+redis 127.0.0.1:6379> KEYS PATTERN
+```
 
