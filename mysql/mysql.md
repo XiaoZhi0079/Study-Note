@@ -691,3 +691,69 @@ B + 树是一种**平衡多路查找树**，其结构分为**叶子节点**和**
 5. 多列索引: 在表的多个字段上创建索引 (uid+cid, 多列索引必须使用到第一个列,才能用到多列索引,否则索引用不上)
 6. 全文索引: 使用FULLTEXT参数可以设置全文索引,只支持CHAR,VARCHAR和TEXT类型的字段上,常用于数据量较大的字符串类型上,可以提高查询速度(线上项目支持专门的搜索功能,给后台服务器增加专门的搜索引擎支持快速高校的搜索 elasticsearch 简称es C++开源的搜索引擎 搜狗的workflow)
 
+## MySQL中常用可执行文件
+
+### MySQLDUMP—数据库备份
+
+#### 备份数据库
+
+```
+mysqldump -u [username] -p[password] [database_name] > [filename].sql
+```
+
+#### 备份表
+
+```
+mysqldump -uroot -p pai_coding article > article.sql
+```
+
+### MySQLadmin—数据库管理工具
+
+可以用来执行一些管理操作，比如说创建数据库、删除数据库、查看 MySQL 服务器的状态等。
+
+在自动化脚本中，会经常使用 mysqladmin 来执行一些管理操作。
+
+查看服务器状态
+
+```
+mysqladmin -uroot -p status
+```
+
+重新加载授权表
+
+```
+mysqladmin -uroot -p flush-privileges
+mysqladmin -uroot -p reload
+```
+
+刷新日志文件
+
+```
+mysqladmin -uroot -p flush-logs
+```
+
+......
+
+### MySQLcheck
+
+mysqlcheck 是 MySQL 提供的一个命令行工具，用于检查、修复、分析和优化数据库表，对数据库的维护和性能优化非常有用。
+
+检查数据库所有的表
+
+```
+mysqlcheck -uroot -p --check database_name
+```
+
+### MySQLimport
+
+导入外部文件至mysql的工具
+
+### MySQLshow
+
+查看数据库信息的工具，可查看数据库中的表，列，索引等等。
+
+### MySQLbinlog
+
+mysqlbinlog 用于查看 MySQL 二进制日志文件的内容，可以用于恢复数据、查看数据变更等。二进制日志是 MySQL 服务器的一个重要特性，记录了数据库更改的所有“事件”，如表的创建、数据的插入、更新和删除操作。
+
+如果发生数据丢失或损坏，就可以使用 mysqlbinlog 来查看和恢复自上次备份以来执行的更改。
