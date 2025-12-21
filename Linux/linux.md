@@ -20,8 +20,6 @@
 
 选项：路径
 
-![ead7128405722d4aae1c566725000ba](C:\Users\张海松\Documents\WeChat Files\wxid_bojikarto3u022\FileStorage\Temp\ead7128405722d4aae1c566725000ba.jpg)
-
 ##### mkdir
 
 ![image-20250823152417618](./media/image-20250823152417618.png)
@@ -56,7 +54,7 @@
 
 ![image-20250823153143404](./media/image-20250823153143404.png)
 
-![image-20250823153233176](C:\Users\张海松\AppData\Roaming\Typora\typora-user-images\image-20250823153233176.png)
+![image-20250823153233176](./media/image-20250823153233176.png)
 
 通配符
 
@@ -70,7 +68,7 @@
 
 ![image-20250823154852471](./media/image-20250823154852471.png)
 
-![image-20250823155132701](C:\Users\张海松\AppData\Roaming\Typora\typora-user-images\image-20250823155132701.png)
+![image-20250823155132701](./media/image-20250823155132701.png)
 
 ##### wc
 
@@ -281,8 +279,6 @@ sudo gpasswd -d yuria wudang：将尤利娅移除wudang组
 groups yuria ：查看尤利娅的组信息
 
 ![image-20250822161848966](./media/image-20250822161848966.png)
-
-![4943e09aa816c266a24078401ba898d](C:\Users\张海松\Documents\WeChat Files\wxid_bojikarto3u022\FileStorage\Temp\4943e09aa816c266a24078401ba898d.jpg)
 
 为用户配置sudo权限
 
