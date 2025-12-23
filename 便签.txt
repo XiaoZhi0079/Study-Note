@@ -1,0 +1,16 @@
+1.vue3笔记 
+2.TS+JS笔记
+3.boss直聘
+
+6.linux基本命令
+7.spring ai-rag
+8.redis    实战
+
+
+挖掘spring ai记忆 实现自动识别记忆
+v-bind  v-on v-model
+
+
+画数据库结构图 
+
+spirngai多模态仅支持上传图片
