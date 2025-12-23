@@ -710,6 +710,29 @@ B + 树是一种**平衡多路查找树**，其结构分为**叶子节点**和**
 事务的持久性(Durability):
 事务完成(commit)以后,DBMS保证它对数据库中的数据的修改是永久性的,即使数据库因为故障出错,也应该能够恢复数据!
 
+### 事务的启动方式
+
+方式一：
+
+```
+mysql> begin;
+Query OK, 0 rows affected (0.00 sec)
+mysql> 事务操作SQL......
+```
+
+方式二：
+
+```
+mysql> start transaction [修饰符]; 
+Query OK, 0 rows affected (0.00 sec)
+mysql> 事务操作SQL......
+```
+
+修饰符：
+1. read only //只读
+2. read write //读写 默认
+3. WITH CONSISTENT SNAPSHOT //一致性读
+
 ### 事务的保存点
 
 ```
