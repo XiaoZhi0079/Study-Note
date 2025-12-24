@@ -13,4 +13,4 @@ v-bind  v-on v-model
 
 画数据库结构图 
 
-spirngai多模态仅支持上传图片
+spirngai多模态仅支持上传图片    springai工具类要注册成bean 否则打包为原生镜像会失效  原生镜像：无需jre jdk机器可直接执行的文件
