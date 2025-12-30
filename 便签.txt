@@ -5,9 +5,17 @@
 6.linux基本命令
 7.spring ai-rag
 8.redis    实战
+9.使用SearXNG实现联网搜索
+10.SSE管道
+
+11. CICD流水线
+
+12.干掉宝塔面板   √√√
+
+13.frp    
 
 
-挖掘spring ai记忆 实现自动识别记忆
+挖掘spring ai记忆 实现自动识别记忆   ？？？？？？？
 v-bind  v-on v-model
 
 
@@ -34,3 +42,40 @@ OCR模型  qwen-vl-ocr-2025-11-20
 1.	提问：考虑对用户的提问进行改写，较模糊则引导用户提问。
 2.	混合检索：如果问题涉及结构化数据（如“我的高数成绩”），系统直接通过 MyBatis 查询 MySQL 数据库；如果问题涉及非结构化知识（如“请假流程”），则计算问题向量与知识库向量的余弦相似度（Cosine Similarity），召回 Top-K 相关片段 。
 3.	上下文拼接与生成：将召回的知识片段作为“上下文（Context）”，结合预设的系统提示词（System Prompt），组装成完整的 Prompt 发送给大模型，生成基于事实的回答。
+
+
+开启simpleadviors 查看日志 是否能召回相似的文档
+
+
+
+
+
+
+[root@iZ7xvdtdi3p11x69rfhfx6Z frp]# cat frpc.toml 
+serverAddr = "127.0.0.1"
+serverPort = 7000
+
+[[proxies]]
+name = "test-tcp"
+type = "tcp"
+localIP = "127.0.0.1"
+localPort = 22
+remotePort = 6000
+[root@iZ7xvdtdi3p11x69rfhfx6Z frp]# cat frps.toml 
+[common]
+bindPort = 7000
+token = "1968zhss"
+
+
+{
+    "registry-mirrors": [
+        "https://docker.1ms.run",
+        "https://s18srhdi.mirror.aliyuncs.com",
+        "https://registry.docker-cn.com"
+    ],
+    "dns": [
+        "1.1.1.1",
+        "8.8.8.8"
+    ]
+}
+
