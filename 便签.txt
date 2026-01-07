@@ -3,26 +3,26 @@
 3.boss直聘
 
 6.linux基本命令
-7.spring ai-rag
-8.redis    实战
-9.使用SearXNG实现联网搜索
+
+
+9.SearXNG 联网搜索数据优化
 10.SSE管道
+
 
 11. CICD流水线
 
-12.干掉宝塔面板   √√√
-
-13.frp    
+14.切片优化策略
 
 
-挖掘spring ai记忆 实现自动识别记忆   ？？？？？？？
+15.挖掘spring ai记忆 
+
+16.文档识别 清晰 策略   OCR模型  qwen-vl-ocr-2025-11-20
+
+  
 v-bind  v-on v-model
 
 
-画数据库结构图 
-
-一张user存管理员 教师 学生 
-还是既有user 存全部 另有教师表 学生表
+ai数据库
 
 spirngai多模态仅支持上传图片    
 springai工具类要注册成bean 否则打包为原生镜像会失效  原生镜像：无需jre jdk机器可直接执行的文件
@@ -30,7 +30,7 @@ springai工具类的返回值必须是可序列化的 因为结果要序列化�
 
 
 
-OCR模型  qwen-vl-ocr-2025-11-20
+
 
 2. RAG（检索增强生成）核心模块实施方案
 
