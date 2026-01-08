@@ -22,6 +22,12 @@
 v-bind  v-on v-model
 
 
+
+defaultsystem应该全局唯一   在yml文件中写定 且不能更改
+
+prompt可以指定
+
+
 ai数据库
 
 spirngai多模态仅支持上传图片    
