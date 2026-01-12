@@ -1,35 +1,4 @@
-
 3.chatclient懒加载   
-
-4.rag 联网 直接对话 使用一个控制方法吗？
-  参考代码
-public String chat(ChatEntity chatEntity) throws IOException {
-
-    String chatid = chatEntity.getChatId();
-    String userinput = chatEntity.getUserInput();
-    MultipartFile imgfile = chatEntity.getImageFile();
-    ChatMode chatMode = chatEntity.getChatMode();
-
-    chatHistoryRepository.save(chatid, "chat");
-
-    ChatClient chatClient = newchatClientconfig.get(chatEntity.getModel());
-    if (chatClient == null) {
-        throw new IllegalArgumentException(
-                "Model not found: '" + chatEntity.getModel() + "'. Available: " + newchatClientconfig.keySet()
-        );
-    }
-
-    if (chatMode == null) {
-        throw new IllegalArgumentException("chatMode is null");
-    }
-
-    return switch (chatMode) {
-        case INTERNET_SEARCH -> internetSearch(chatClient, chatid, userinput, imgfile);
-        case KNOWLEDGE_BASE  -> knowledgeBase(chatClient, chatid, userinput, imgfile);
-        case DIRECT          -> direct(chatClient, chatid, userinput, imgfile);
-    };
-}
-
 
 5.流式sse对话
 
@@ -48,4 +17,5 @@ public String chat(ChatEntity chatEntity) throws IOException {
   "chatMode": "KNOWLEDGE_BASE",
   "model": "glm-4.7",
   "defaultSystem": "你是一个校园知识助手"
-}
+}、
+
