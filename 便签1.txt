@@ -8,7 +8,9 @@
 
 8.  存储桶的凭证改到yml文件中
 
+9. aws-vps  dightalocean-vps azure-vps  哪吒探针  linuxdo
 
+10.切面编程写日志
 
 {
   "userName": "zhangsan",
