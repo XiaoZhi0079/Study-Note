@@ -1,5 +1,44 @@
 # java基础
 
+## Static
+
+### 静态属性
+
+当 JVM 首次加载该类（如首次创建实例、调用静态方法、访问静态变量）时，静态属性被加载/赋值，先于**静态代码块**的加载。不过赋值后续也可以进行修改。
+
+```
+private volatile static Singleton singleton;
+```
+
+### 静态代码块
+
+当 JVM 首次加载该类（如首次创建实例、调用静态方法、访问静态变量）时，静态代码块会在类初始化阶段**自动执行**，且**仅执行一次**。
+
+```
+static{
+     System.out.print("静态代码库执行")
+}
+```
+
+### 静态方法
+
+被调用时执行 调用多少次 ，执行多少次
+
+```
+    public TestStatic() {
+        System.out.println("构造方法执行"); // 最后执行
+    }
+
+    public static void main(String[] args) {
+        // 首次加载类，触发静态代码块执行
+        TestStatic t1 = new TestStatic();
+        // 再次创建实例，静态代码块不再执行
+        TestStatic t2 = new TestStatic();
+    }
+```
+
+
+
 ## 多态
 
 多态下不能调用子类独有方法。
@@ -1420,6 +1459,16 @@ public class MyImportSelector implements ImportSelector {
 ![image-20251111171753861](./media/image-20251111171753861.png)
 
 # 框架
+
+## spring-boot
+
+### 配置文件-yml
+
+1.不能使用Tab键 只能使用空格
+
+2.冒号后面一定要加一个空格
+
+3.路径应写相对路径（在别人的设备中运行，可能会冲突 或者没有此盘符。）
 
 ## spring-doc
 

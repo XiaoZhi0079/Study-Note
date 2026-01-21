@@ -1,16 +1,27 @@
-3.chatclient懒加载   
+3.chatclient懒加载    
 
 5.流式sse对话
 
 6.阿里巴巴视觉向量模型
 
-7. 图片上传逻辑 实体类改为List<imgurls> 图片上传逻辑与文字逻辑分开   
 
-8.  存储桶的凭证改到yml文件中
 
-9. aws-vps  dightalocean-vps azure-vps  哪吒探针  linuxdo
+9.2api部署
 
-10.切面编程写日志
+10.反重力反代
+
+10.切面编程写日志     
+
+11.数据结构复习 单集合 双集合 equal hashcode  stream流    
+
+12 kiro    重要
+
+13.cloudflared RDP     重要
+
+14 改简历    重要
+
+
+15 lamda 方法引用
 
 {
   "userName": "zhangsan",
@@ -19,5 +30,5 @@
   "chatMode": "KNOWLEDGE_BASE",
   "model": "glm-4.7",
   "defaultSystem": "你是一个校园知识助手"
-}、
+}
 
