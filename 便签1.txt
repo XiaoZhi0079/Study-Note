@@ -16,13 +16,12 @@
 
 12 kiro    重要
 
-13.cloudflared RDP     重要
-
 14 改简历    重要
-
 
 15 lamda 方法引用
 
+
+16 frp 内网穿透
 {
   "userName": "zhangsan",
   "chatId": "c1",
