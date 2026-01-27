@@ -320,8 +320,6 @@ CREATE USER
 'xiaozhi'@'8.12.12.%' IDENTIFIED BY '你的密码';
 ```
 
-
-
 #### 授权
 
 ```
@@ -563,6 +561,10 @@ select * from stu left join sc on 条件；
 **右连接**
 
 同左连接
+
+##### 全连接
+
+使用union关键字拼接左连接结果连右连接结果
 
 ### 库操作
 
